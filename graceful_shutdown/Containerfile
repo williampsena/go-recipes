@@ -1,0 +1,13 @@
+FROM docker.io/golang:alpine3.17
+
+MAINTAINER me@willsena.dev
+
+WORKDIR /app
+
+COPY ./graceful_shutdown go.mod /app
+
+RUN go build -o /app/graceful-shutdown
+
+EXPOSE 3000
+
+CMD [ "/app/graceful-shutdown" ]
