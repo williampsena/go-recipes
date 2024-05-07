@@ -1,4 +1,4 @@
-FROM docker.io/golang:1.22.2-alpine3.18
+FROM docker.io/golang:1.22.2-alpine3.18 as build
 
 MAINTAINER me@willsena.dev
 
@@ -7,6 +7,14 @@ WORKDIR /app
 COPY ./graceful_shutdown go.mod /app
 
 RUN go build -o /app/graceful-shutdown
+
+FROM docker.io/alpine:3.18 as app
+
+WORKDIR /app
+
+COPY --from=build /app/graceful-shutdown /app/graceful-shutdown
+
+COPY ./graceful_shutdown/ascii_art.txt  ./graceful_shutdown/dragon_ball.csv /app
 
 EXPOSE 3000
 
