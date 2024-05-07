@@ -16,6 +16,4 @@ COPY --from=build /app/graceful-shutdown /app/graceful-shutdown
 
 COPY ./graceful_shutdown/ascii_art.txt  ./graceful_shutdown/dragon_ball.csv /app
 
-EXPOSE 3000
-
 CMD [ "/app/graceful-shutdown" ]
