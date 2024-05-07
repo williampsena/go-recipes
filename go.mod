@@ -1,3 +1,3 @@
-module app
+module github.com/williampsena/go-recipes
 
-go 1.22.3
+go 1.22.2
