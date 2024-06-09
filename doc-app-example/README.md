@@ -2,6 +2,8 @@
 
 This repository contains useful "godoc" example, some of which I used while writing my articles.
 
+More information about this application can be found in this article: [Como gerar documentos do seu código em Go?](https://willsena.dev/como-gerar-documentos-do-seu-codigo-em-go/).
+
 
 # Installing dependencies
 
